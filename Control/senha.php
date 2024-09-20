@@ -59,16 +59,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado da Verificação</title>
-</head>
-<body>
-    <h1>Resultado da Verificação de Senhas</h1>
-    <p><?php echo htmlspecialchars($resultado, ENT_QUOTES, 'UTF-8'); ?></p>
-    <a href="form.html">Voltar</a>
-</body>
-</html>
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['fsenha'])) {
+        $senha = $_POST['fsenha'];
+        $resultado = processarDados($senha);
+        // Redirecionar para a página de resultados com o resultado na URL
+        header("Location: ../view/teste.php?resultado=" . urlencode($resultado));
+        exit();
+    } else {
+        $resultado = "Nenhuma senha foi fornecida.";
+    }
+} else {
+    $resultado = "Método de solicitação inválido.";
+}
+?>

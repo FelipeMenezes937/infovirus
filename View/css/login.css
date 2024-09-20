@@ -1,7 +1,7 @@
 body { 
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .main-login {
@@ -14,22 +14,22 @@ body {
 }
 
 .left-login {
-    background-color: white;
     width: 45vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    background-color: #f9f9f9; /* Define o fundo azul da esquerda */
 }
 
 .left-login > h1 {
-    color: black;
+    color: white;
 }
 
 /* Ajuste para a logo */
 .logoimage {
-    width: 300px; /* Defina o tamanho desejado para a logo */
+    width: 80%; /* Ajusta o tamanho da logo para caber na tela */
+    max-width: 400px; /* Limita o tamanho máximo da logo */
     height: auto; /* Mantém a proporção da imagem */
 }
 
@@ -39,10 +39,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f9f9f9; /* Mantém o fundo branco da direita */
 }
 
 .card-login {
-    position: relative;
     width: 70%;
     display: flex;
     justify-content: center;
@@ -133,11 +133,11 @@ input:valid ~ label {
 
 .register p a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-    color: #033d80; /* Cor ao passar o mouse, pode ser ajustada conforme preferência */
+    color: #033d80; /* Cor ao passar o mouse */
 }
 
 /* Para evitar que o link fique roxo/azul após ser visitado */
 .register p a:visited {
     color: #0349ae; /* Cor após o link ser visitado */
-    text-decoration: none; /* Remove o sublinhado */
+    text-decoration: none;
 }

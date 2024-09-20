@@ -12,8 +12,8 @@
     <div class="main-test">
         <div class="conteudo-test">
             <div class="text-test"> 
-                <div class="title"> SEU<br>ANTIVIRUS<br> </div>
-                <div class="subtitle">Selecione a opção para verificar a presença de vírus.</div>
+                <div class="title"> SEGURANÇA<br>ONLINE<br> </div>
+                <div class="subtitle">Proteja seus dados com nossa segurança digital de ponta!</div>
             </div>
 
             <!-- Aqui é onde o conteúdo será incluído dinamicamente -->

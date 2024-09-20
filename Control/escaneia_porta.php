@@ -1,6 +1,7 @@
 <?php
 $MAC = exec('getmac');
 $MAC = strtok($MAC, ' ');
+
 function scan_portas($host, $portas, $tempo) {
     $portas_abertas = [];
     foreach ($portas as $porta) {
@@ -72,27 +73,20 @@ $portas = [
 
 $tempo = 0.01;
 
-$inicio_geral = microtime(true); // Marca o tempo de início geral
-if($host == '127.0.0.1'){
-    echo "Endereço Mac(físico): $MAC";
-    echo "escaneando máquina local <br>";
-}else{
-    echo "Endereço Mac(físico): $MAC";
-    echo "escaneando host: $host <br>";
-}
 $portas_abertas = scan_portas($host, $portas, $tempo);
-$fim_geral = microtime(true); // Marca o tempo de fim geral
-$tempo_resposta_geral = $fim_geral - $inicio_geral; // Calcula o tempo de resposta geral
 
+// Construir o resultado
+$resultado = "";
 if (!empty($portas_abertas)) {
     foreach ($portas_abertas as $porta => $info) {
-        echo " <br> Porta $porta: {$info['software']} <br> (Versão: {$info['versao']}) <br> (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos) <br>";
+        $resultado .= "Porta $porta: {$info['software']} (Versão: {$info['versao']}) (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)\n";
     }
-    echo "<br> Tempo de resposta geral: " . round($tempo_resposta_geral, 4) . " segundos <br>";
 } else {
-    echo "Endereço Mac(físico): $MAC";
-    echo "Nenhuma porta aberta encontrada.\n";
+    $resultado = "Nenhuma porta aberta encontrada.\n";
 }
 
+// Redireciona para a página de resultados
+header("Location: ../view/teste.php?resultado=" . urlencode($resultado));
+exit();
+
 ?>
-<a href="index.html">Voltar</a>

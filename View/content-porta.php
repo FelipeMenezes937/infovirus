@@ -1,7 +1,7 @@
 <form action="../control/escaneia_porta.php" method="get">
 <div class="input-box">
     <center> 
-        <ion-icon name="globe-outline"></ion-icon>
+    <ion-icon name="log-in-outline"></ion-icon>
         <br>
 </center>
     </div>

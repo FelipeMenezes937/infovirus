@@ -15,7 +15,7 @@ session_start();
 <?php include 'header.php'; ?>
     <div class="main-login">
         <div class="left-login"> 
-            <button id="toggle-dark-mode">Alternar Modo Escuro</button>
+           
             <a href="home.php"> <img id="logo-image" src="imagens/logo-BfW.png" alt="logo_login" class="logoimage"> </a>
         </div>
         
@@ -57,7 +57,7 @@ session_start();
                     </div>
                     <br>
                     <div class="termos">
-                        <label><input type="checkbox" name="termos" required>Aceito os <a href="terms.php">Termos e Condições </a>e autorizo o uso dos meus dados de acordo com a Política de Privacidade.</label>
+                        <label> <input type="checkbox" name="termos" required> </label> <label>Aceito os <a href="terms.php">Termos e Condições </a>e autorizo o uso dos meus dados de acordo com a Política de Privacidade.</label>
                     </div>
                     <br>
                     <button type="submit" class="btn-login">Registrar</button>
