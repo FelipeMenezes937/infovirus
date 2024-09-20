@@ -1,0 +1,52 @@
+body.dark-mode {
+    background-color: #33342F; /* cor de fundo do modo escuro */
+    color: #fff; /* cor do texto do modo escuro */
+}
+
+body.dark-mode .main-login {
+    background-color: #33342F; /* cor de fundo do modo escuro */
+}
+
+body.dark-mode .left-login {
+    background-color: #33342F; /* cor de fundo do lado esquerdo no modo escuro */
+}
+
+body.dark-mode .left-login > h1 {
+    color: #fff; /* cor do texto do cabeçalho no lado esquerdo no modo escuro */
+}
+
+body.dark-mode .card-login > h1 {
+    color: #fff; /* cor do texto do cabeçalho no cartão de login no modo escuro */
+}
+
+body.dark-mode .social-login ion-icon {
+    color: #fff;
+}
+
+
+body.dark-mode .inputbox label {
+    color: #b0a7a1;
+}
+
+body.dark-mode .inputbox input {
+    color: #fff; /* cor do texto das inputs no modo escuro */
+}
+
+body.dark-mode .register p a {
+    color: #FFF; /* Cor padrão do link */
+    text-decoration: none; /* Remove o sublinhado */
+    text-align: center;
+    margin: 25px 0 10px;
+    font-size: .9em;
+}
+
+
+body.dark-mode .register p a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #FFF; /* Cor ao passar o mouse */
+}
+
+/* Para evitar que o link fique roxo/azul após ser visitado */
+body.dark-mode .register p a:visited {
+    color: #FFF;
+}

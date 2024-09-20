@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><center>
+    <h1>INFOVÍRUS</h1><br><br>
+    <form action="testa_virus.php" method="post" enctype="multipart/form-data">
+        <label>inserir arquivo</label><br>
+        <input type="file" name="arquivo"><br><br>
+        <button type="submit">verificar arquivo</button>
+    </form><br><br>
+
+    escanear portas
+    <form action="escaneia_porta.php" method="get"><button type="submit">enviar</button></form><br><br>
+<br>
+    <form action="email_consulta.php" method="get">
+        <label>verifique se um domínio é suspeito:</label><br>
+        <br>
+        <input type="email" name="femail" ><br>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+<br><br><br>
+<br>
+    <form action="comHash.php" method="post" enctype="multipart/form-data">
+        <label>inserir os arquivos para comparação</label><br>
+        <input type="file" name="arquivo1"><br><br>
+        <input type="file" name="arquivo2"><br><br>
+        <button type="submit">verificar arquivos</button>
+    </form><br><br>
+
+   
+<br>
+    <form action="senha.php" method="post">
+        <label>insira aqui a senha que quiser testar:</label><br>
+        <br>
+        <input type="text" name="fsenha" ><br>
+        
+        <button type="submit">submit</button>
+    </form>
+</center>
+</body>
+</html>
