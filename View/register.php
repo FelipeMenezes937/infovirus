@@ -32,7 +32,7 @@ session_start();
 
                     <!-- Espaço para exibir a mensagem de erro de senha -->
                     <p id="erro-senha" style="color:red; text-align: center; display: none;">As senhas não coincidem!</p>
-
+                    <p id="senhaFraca" style="color:red; text-align: center; display: none;"> ou senha muito fraca!</p>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
                         <input type="text" required name="fname" id="nome">
@@ -79,15 +79,29 @@ session_start();
 
     <!-- Validação do lado do cliente -->
     <script>
-    document.querySelector('form').addEventListener('submit', function(event) {
+     document.querySelector('form').addEventListener('submit', function(event) {
         let senha = document.getElementById('senha').value;
         let confirmaSenha = document.getElementById('confirma_senha').value;
         let erroSenha = document.getElementById('erro-senha');
+        let senhaFraca = document.getElementById('senhaFraca');
+        let resultado = AnalisaSenha(senha)
+        console.log(resultado)
 
-        if (senha !== confirmaSenha) {
+        if (senha == confirmaSenha) {
             event.preventDefault(); // Impede o envio do formulário
             erroSenha.style.display = 'block'; // Exibe a mensagem de erro
         }
+        if (resultado <= 2) {
+            event.preventDefault(); // Impede o envio do formulário
+            senhaFraca.style.display = 'block'; // Exibe a mensagem de erro
+        }
+        
+
+
+
+
+
+
     });
     </script>
     <?php include 'vlibras.php'; ?>
@@ -96,3 +110,98 @@ session_start();
 </body>
 </html>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function AnalisaSenha(senha){
+
+let pontos = 0;
+let smb = /\W|_/; // todos os caracteres não alfanuméricos
+let classe
+if(senha.length >= 8){
+    pontos += 0;
+}
+
+if(/[a-z]/.test(senha)){
+    pontos++
+}
+
+if(/[A-Z]/.test(senha)){
+    pontos++
+}
+
+if(/[0-9]/.test(senha)){
+    pontos++
+}
+
+if(smb.test(senha)){
+    pontos++
+}
+
+if(senha.length < 5 || senha.includes("12345") || senha.includes("123456") || senha.includes("1234567") ){
+    pontos -= 2;
+    }
+
+    function Sequencia(str) {
+        const primeiroChar = str[0];
+
+        for (let i = 1; i < str.length; i++) { // Começa do segundo caractere
+            if (str[i] !== primeiroChar) {
+                return false; // Se encontrar um diferente, retorna falso
+            }
+        }
+        return true; // Se todos forem iguais, retorna verdadeiro
+    }
+
+
+if(Sequencia(senha)){
+    pontos = 0;
+}
+
+/* switch(pontos){
+    case 0: 
+        classe = "sua senha é muito fraca";
+        break;
+    case 1: 
+        classe = "sua senha é fraca";
+        break;
+    case 2: 
+        classe = "sua senha é comum";
+        break;
+    case 3: 
+        classe = "sua senha é boa";
+        break;
+    case 4: 
+        classe = "sua senha é muito boa";
+        break;
+} */
+
+
+return pontos;
+}
+</script>
