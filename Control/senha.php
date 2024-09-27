@@ -79,3 +79,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>
 
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['fsenha'])) {
+        $senha = $_POST['fsenha'];
+        $resultado = processarDados($senha);
+        // Redirecionar para a página de resultados com o resultado na URL
+        header("Location: ../view/teste.php?resultado=" . urlencode($resultado));
+        exit();
+    } else {
+        $resultado = "Nenhuma senha foi fornecida.";
+    }
+} else {
+    $resultado = "Método de solicitação inválido.";
+}
+?>

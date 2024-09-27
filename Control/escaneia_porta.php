@@ -2,6 +2,7 @@
 $MAC = exec('getmac');
 $MAC = strtok($MAC, ' ');
 
+
 function scan_portas($host, $portas, $tempo) {
     $portas_abertas = [];
     foreach ($portas as $porta) {
@@ -77,12 +78,15 @@ $portas_abertas = scan_portas($host, $portas, $tempo);
 
 // Construir o resultado
 $resultado = "";
+// Construir o resultado
+$resultado = "";
 if (!empty($portas_abertas)) {
     foreach ($portas_abertas as $porta => $info) {
         $resultado .= "
         Porta $porta: {$info['software']} (Versão: {$info['versao']}) (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)\n";
     }
 } else {
+    $resultado = "Nenhuma porta aberta encontrada.\n";
     $resultado = "Nenhuma porta aberta encontrada.\n";
 }
 
