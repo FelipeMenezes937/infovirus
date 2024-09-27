@@ -23,9 +23,9 @@ if (!isset($_POST['termos'])) {
     exit();
 }
 
-$nome = mysqli_real_escape_string($conexao, trim($_POST['fname']));
-$email = mysqli_real_escape_string($conexao, trim($_POST['femail']));
-$senha = mysqli_real_escape_string($conexao, md5(trim($_POST['fsenha'])));
+$nome = mysqli_real_escape_string($conexao, trim(str_replace ("'", "", ($_POST['fname']))));
+$email = mysqli_real_escape_string($conexao, trim(str_replace("'","", ($_POST['femail']))));
+$senha = mysqli_real_escape_string($conexao, md5(trim(str_replace("'","", $_POST['fsenha']))));
 
 // Verificando se o usuário já está registrado
 $sql = "SELECT COUNT(*) AS total FROM usuario WHERE email = '$email'";

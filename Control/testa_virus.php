@@ -1,20 +1,5 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	resultados da pesquisa:
-</body>
-</html>
-
-
-
 <?php
 
 /*
@@ -30,13 +15,13 @@ $virustotal_api_key = "9c786184ee0b07f3f16436272314583f89cc76a011add8d9feeb75b0b
 
 
 
-    echo '<pre>';
-   print_r($_FILES['arquivo']);
-   echo '</pre>';
-   echo '<br>Nome do Arquivo: '.$_FILES['arquivo']['name'];
-   echo '<br>Caminho Temporário do Arquivo: '.$_FILES['arquivo']['tmp_name'];
-   echo '<br>Tipo do Arquivo: '.$_FILES['arquivo']['type'];
-   echo '<br>Tamanho do Arquivo: '.$_FILES['arquivo']['size'].' bytes';
+ //   echo '<pre>';
+ //  print_r($_FILES['arquivo']);
+ //  echo '</pre>';
+  // echo '<br>Nome do Arquivo: '.$_FILES['arquivo']['name'];
+   //echo '<br>Caminho Temporário do Arquivo: '.$_FILES['arquivo']['tmp_name'];
+   //echo '<br>Tipo do Arquivo: '.$_FILES['arquivo']['type'];
+   //echo '<br>Tamanho do Arquivo: '.$_FILES['arquivo']['size'].' bytes';
 
 // enter here the path of the file to be scanned
 $file_to_scan =  $_FILES['arquivo']['tmp_name'];
@@ -68,7 +53,7 @@ if($api_reply_array['response_code']==-2){
 // reply is OK (it contains an antivirus report)
 // use the variables from $api_reply_array to process the antivirus data
 if($api_reply_array['response_code']==1){
-	echo "\n Nós encontramos ".$api_reply_array['positives']." positives found. Here is the full data: \n\n";
+	echo "\nRecebemos um relatório dos antivírus, houveram ".$api_reply_array['positives']." positivos encontrados. aqui estão os dados: \n\n";
 	print_r($api_reply_array);
 	exit;
 }

@@ -1,36 +1,12 @@
-header { 
-    width: 100%;
-    height: 80px;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 130px;
-    position: fixed; /* Fixar o cabeçalho no topo */
-    top: 0; /* Posicioná-lo no topo da página */
-    left: 0;
-    z-index: 1000; /* Garantir que o cabeçalho fique sobre outros elementos */
-    
-}
-
+@import url("size.css");
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e9e9e9;
+    background-color: #eeeeee;
     
 }
 
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover {
-    text-decoration: underline;
-}
 
 .container {
     font-size: 20px;

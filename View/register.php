@@ -8,15 +8,13 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="dark-mode.css">
     <title>Registrar</title>
 </head>
 <body>
 <?php include 'header.php'; ?>
     <div class="main-login">
         <div class="left-login"> 
-            <button id="toggle-dark-mode">Alternar Modo Escuro</button>
-            <a href="home.php"> <img id="logo-image" src="imagens/logo-BfW.png" alt="logo_login" class="logoimage"> </a>
+            <a href="home.php"> <img id="logo-image" src="imagens/logo-Bsf.png" alt="logo_login"> </a>
         </div>
         
         <form method="post" action="../control/processa_reg.php">
@@ -56,9 +54,16 @@ session_start();
                         <label for="">Confirmar Senha</label>
                     </div>
                     <br>
+                    
+                    
+                    
                     <div class="termos">
-                        <label><input type="checkbox" name="termos" required>Aceito os <a href="terms.php">Termos e Condições </a>e autorizo o uso dos meus dados de acordo com a Política de Privacidade.</label>
+                        <label>  <input type="checkbox" name="termos" required> 
+                     </label> <label> Eu concordo com os <a href="terms.php"> Termos de Uso </a> e autorizo o uso dos meus dados de acordo com a Política de Privacidade. </label>
                     </div>
+                    
+                    
+                    
                     <br>
                     <button type="submit" class="btn-login">Registrar</button>
                     <div class="register">
@@ -69,8 +74,6 @@ session_start();
             </div>
         </form>
     </div>
-
-    <script src="dark.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -87,6 +90,9 @@ session_start();
         }
     });
     </script>
+    <?php include 'vlibras.php'; ?>
+    <?php include 'config.php'; ?>
+    <?php include 'footer.php'; ?> 
 </body>
 </html>
-<?php include 'footer.php'; ?>
+

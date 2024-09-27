@@ -7,19 +7,19 @@
     <title>Seu Antivirus</title>
 </head>
 <body>
-    <?php include 'header.php'; ?>
-
+    <?php require_once 'header.php'; ?>
+    
     <div class="main-test">
         <div class="conteudo-test">
             <div class="text-test"> 
-                <div class="title"> SEU<br>ANTIVIRUS<br> </div>
-                <div class="subtitle">Selecione a opção para verificar a presença de vírus.</div>
+            <br> <br>    
+            <div class="title"> SEGURANÇA ONLINE <br> </div>
+                <div class="subtitle">Proteja seus dados com nossa segurança digital de ponta!</div>
             </div>
 
-            <!-- Aqui é onde o conteúdo será incluído dinamicamente -->
+            
             <div class="content-area">
                 <?php
-                    // Verifica se o parâmetro 'page' foi passado na URL, e inclui o conteúdo correspondente
                     if (isset($_GET['page'])) {
                         $page = $_GET['page'];
                         switch ($page) {
@@ -53,7 +53,7 @@
         </div>
 
         <?php
-    // Verifica qual página está sendo passada na query string
+   
         $page = isset($_GET['page']) ? $_GET['page'] : 'url'; // Padrão é 'url'
         ?>
 
@@ -67,10 +67,10 @@
     
 </nav>
 
-    </div>
-
     
+<?php include 'vlibras.php'; ?>
+<?php include 'config.php'; ?>
+<?php require_once 'footer.php'; ?> 
 
-    <?php include 'footer.php'; ?>
 </body>
 </html>

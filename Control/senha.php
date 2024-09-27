@@ -1,5 +1,4 @@
 <?php
-
 // Função para buscar dados da API
 function buscarDadosDaApi($caractereConsulta) {
     $url = 'https://api.pwnedpasswords.com/range/' . $caractereConsulta;
@@ -40,17 +39,32 @@ function verificarSenhaNaApi($senha) {
 
 function processarDados($senha) {
     $contagem = verificarSenhaNaApi(trim($senha));
+    
     if ($contagem) {
-        return "A senha foi encontrada $contagem vez(es)... você provavelmente deve trocá-la.";
+        return "A senha foi encontrada  $contagem vez(es)... você provavelmente deve trocá-la.";
     } else {
         return "A senha não foi encontrada. Continue com segurança!";
     }
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['fsenha'])) {
         $senha = $_POST['fsenha'];
         $resultado = processarDados($senha);
+        // Redirecionar para a página de resultados com o resultado na URL
+        header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+        exit();
     } else {
         $resultado = "Nenhuma senha foi fornecida.";
     }
@@ -59,16 +73,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado da Verificação</title>
-</head>
-<body>
-    <h1>Resultado da Verificação de Senhas</h1>
-    <p><?php echo htmlspecialchars($resultado, ENT_QUOTES, 'UTF-8'); ?></p>
-    <a href="form.html">Voltar</a>
+
+
+
 </body>
 </html>
+

@@ -18,6 +18,7 @@
         <p> Verificação de senhas: <a href="https://haveibeenpwned.com/">Have i been pwned</a> </p>
         
 </div>
+<?php include 'size.php'; ?>
 <?php include 'footer.php'; ?>
 
     </body>

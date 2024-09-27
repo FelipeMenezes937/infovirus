@@ -9,8 +9,9 @@
 </head>
 <body>
 <?php include 'header.php'; ?>
-<br> <br> <br> <br> <br> <br> <br>
+
     <div class="container">
+    <br> <br> <br> 
         <h2> <b> Fascículos </b> </h2>  
         <p> Designamos esta página com o objetivo de conscientizar sobre o uso correto de dispositivos, garantindo que as pessoas estejam protegidas contra qualquer tipo de ataque digital. </p>
         <br>
@@ -18,9 +19,18 @@
 </div>
 
 <div class="fasciculos">
-    <a href="codigosmaliciosos"> 
+    <a href="codigosmaliciosos"> </a>
+    <a href="computadores"> </a>
+    <a href="privacidade"> </a>
+    <a href="redes"> </a>
+    <a href="vazamentos"> </a>
 </div>
-<?php include 'footer.php'; ?>
+
+
+<?php include 'vlibras.php'; ?>
+<?php include 'config.php'; ?>
+<?php include 'footer.php'; ?> 
+
 
     </body>
 </html>

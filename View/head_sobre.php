@@ -19,9 +19,10 @@
         <p>Combinamos conhecimentos em programação e segurança da informação para criar uma ferramenta que não só atende às necessidades atuais, mas também contribui para um ambiente online mais seguro. Nosso projeto é o resultado de muito trabalho em equipe, pesquisa e aprendizado, e tem como objetivo oferecer uma solução prática e acessível para a detecção de vírus em sites.</p>
         <br>
         <p>Estamos entusiasmados com a oportunidade de aplicar nossos conhecimentos em um projeto tão relevante e esperamos que nossa ferramenta possa ser útil para a comunidade. <br>
-        :)   </p>
+       </p>
     </div>
-
+    <?php include 'vlibras.php'; ?>
+    <?php include 'config.php'; ?>
     <?php include 'footer.php'; ?> 
 
 </body>

@@ -1,7 +1,9 @@
+@import url("size.css");
+
 body { 
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .main-login {
@@ -14,7 +16,7 @@ body {
 }
 
 .left-login {
-    background-color: white;
+    background-color: #f9f9f9;
     width: 45vw;
     height: 100vh;
     display: flex;
@@ -49,7 +51,7 @@ body {
 }
 
 .card-login > h1 {
-    color: black;
+    color: #33342F;
     font-weight: 800;
     margin: 0;
     font-size: 3em;
@@ -111,11 +113,10 @@ input:valid ~ label {
 }
 
 .termos {
-    margin: -15px 0 15px;
-    font-size: .9em;
-    display: flex;
-    justify-content: center;
+    margin: 0px 0 20px;
+    font-size: 15px;
     width: 60%;
+    margin-left: 25px; 
 }
 
 .register p a {
