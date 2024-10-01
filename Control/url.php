@@ -1,33 +1,92 @@
 <?php
+$furl = $_POST['furl'];
+$apiKey = 'coloca a api key aqui paizao'; // Substitua pela sua chave de API
+$apiEndpoint = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $apiKey;
+$resultado;
 
-$url = $_POST["furl"];
-$curl = curl_init();
+function getMainDomain($url) {
+    $url = preg_replace('/^https?:\/\//', '', $url);
+    $url = explode('/', $url)[0];
+    $parts = explode('.', $url);
+    if (count($parts) > 2) {
+        $url = implode('.', array_slice($parts, -2));
+    }
+    return $url;
+}
 
-curl_setopt_array($curl, [
-  CURLOPT_URL => "https://www.virustotal.com/api/v3/private/urls",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => json_encode([
-    'url' => 'facebook.com'
-  ]),
-  CURLOPT_HTTPHEADER => [
-    "accept: application/json",
-    "content-type: application/json",
-    "x-apikey: 9c786184ee0b07f3f16436272314583f89cc76a011add8d9feeb75b0bc41600e"
-  ],
+$hostname = getMainDomain($furl);
+$port = 443;
+
+// Verificar se o hostname pode ser resolvido
+if (gethostbyname($hostname) == $hostname) {
+    echo "Host desconhecido: $hostname";
+    exit;
+}
+
+$context = stream_context_create([
+    "ssl" => [
+        "capture_peer_cert" => true,
+        "verify_peer" => false,
+        "verify_peer_name" => false,
+    ],
 ]);
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+$client = @stream_socket_client("ssl://{$hostname}:{$port}", $errno, $errstr, 30, STREAM_CLIENT_CONNECT, $context);
 
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
+if ($client) {
+    $cont = stream_context_get_params($client);
+    if (isset($cont["options"]["ssl"]["peer_certificate"])) {
+        $cert = openssl_x509_parse($cont["options"]["ssl"]["peer_certificate"]);
+        
+        $currentDate = time();
+        if ($currentDate > $cert['validTo_time_t']) {
+            $vssl = " certificado ssl: <strong> não é válido (expirado)</strong>\n";
+        } else {
+            $vssl = " certificado ssl: <strong> válido </strong>\n";    
+        }
+    } else {
+        $vssl = " certificado ssl: <strong>não encontrado</strong>\n";
+    }
 } else {
-  echo $response;
+    echo "Erro ao conectar: $errstr ($errno)";
+    exit;
 }
+
+$requestBody = json_encode([
+    'client' => [
+        'clientId' => 'yourcompanyname',
+        'clientVersion' => '1.5.2'
+    ],
+    'threatInfo' => [
+        'threatTypes' => ['MALWARE', 'SOCIAL_ENGINEERING'],
+        'platformTypes' => ['ANY_PLATFORM'],
+        'threatEntryTypes' => ['URL'],
+        'threatEntries' => [
+            ['url' => $furl]
+        ]
+    ]
+]);
+
+$ch = curl_init($apiEndpoint);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+$responseData = json_decode($response, true);
+if (isset($responseData['matches'])) {
+    $vrul = " url: <strong>perigosa!</strong>";
+} else {
+    $vrul = " url: <strong>segura</strong>";
+}
+$resultado = $vssl ."<br>". $vrul;
+echo $resultado;
+
+/* 
+urls fornecidas pela google para testar:
+http://testsafebrowsing.appspot.com/s/malware.html
+*/
+?>

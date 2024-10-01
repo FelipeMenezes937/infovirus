@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>
 
+<<<<<<< Updated upstream
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -95,3 +96,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = "Método de solicitação inválido.";
 }
 ?>
+=======
+>>>>>>> Stashed changes

@@ -2,7 +2,10 @@
 $MAC = exec('getmac');
 $MAC = strtok($MAC, ' ');
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 function scan_portas($host, $portas, $tempo) {
     $portas_abertas = [];
     foreach ($portas as $porta) {
@@ -78,8 +81,11 @@ $portas_abertas = scan_portas($host, $portas, $tempo);
 
 // Construir o resultado
 $resultado = "";
+<<<<<<< Updated upstream
 // Construir o resultado
 $resultado = "";
+=======
+>>>>>>> Stashed changes
 if (!empty($portas_abertas)) {
     foreach ($portas_abertas as $porta => $info) {
         $resultado .= "
@@ -87,7 +93,10 @@ if (!empty($portas_abertas)) {
     }
 } else {
     $resultado = "Nenhuma porta aberta encontrada.\n";
+<<<<<<< Updated upstream
     $resultado = "Nenhuma porta aberta encontrada.\n";
+=======
+>>>>>>> Stashed changes
 }
 
 // Redireciona para a página de resultados

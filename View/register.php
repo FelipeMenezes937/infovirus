@@ -110,6 +110,7 @@ session_start();
 </body>
 </html>
 
+<<<<<<< Updated upstream
 
 
 
@@ -205,3 +206,5 @@ if(Sequencia(senha)){
 return pontos;
 }
 </script>
+=======
+>>>>>>> Stashed changes

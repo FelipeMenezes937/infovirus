@@ -3,19 +3,53 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< Updated upstream
     background-color: #eeeeee;
     
 }
 
+=======
+}
+
+.fotos img{
+ margin: 30px;
+}
+
+.main-sobre {
+        width: 100vw;
+        height: 110vh;
+        background-color: #f9f9f9;
+        display: flex;
+       
+    }
+    
+.left-sobre {
+        width: 45vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9; /* Define o fundo azul da esquerda */
+    }
+    
+.right-sobre {
+        width: 55vw;
+        height: 110vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9; /* Mantém o fundo branco da direita */
+    }
+    
+>>>>>>> Stashed changes
 
 .container {
     font-size: 20px;
-    max-width: 1000px;
-    margin: 20px auto;
+    margin: 100px;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgb(255, 255, 255);
+    
 }
 .container h2 {
     text-align: center;
@@ -25,3 +59,4 @@ body {
     line-height: 1.6;
     text-align: justify;
 }
+
