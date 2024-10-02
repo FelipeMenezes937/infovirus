@@ -10,7 +10,7 @@ Feel free to edit and redistribute while keeping the above URL. Thank you.
 
 header("Content-Type: text/plain"); 
 
-// edit the virustotal.com api key, get one from the site
+// api key do VT
 $virustotal_api_key = "9c786184ee0b07f3f16436272314583f89cc76a011add8d9feeb75b0bc41600e";
 
 
@@ -26,10 +26,10 @@ $virustotal_api_key = "9c786184ee0b07f3f16436272314583f89cc76a011add8d9feeb75b0b
 // enter here the path of the file to be scanned
 $file_to_scan =  $_FILES['arquivo']['tmp_name'];
 
-// get the file size in mb, we will use it to know at what url to send for scanning (it's a different URL for over 30MB)
+//pega o tamanho do arquivo 
 $file_size_mb = filesize($file_to_scan)/1024/1024;
 
-// calculate a hash of this file, we will use it as an unique ID when quering about this file
+// tira o hash do arquivo
 $file_hash = hash('sha256', file_get_contents($file_to_scan));
 
 
@@ -40,7 +40,7 @@ $report_url = 'https://www.virustotal.com/vtapi/v2/file/report?apikey='.$virusto
 
 $api_reply = file_get_contents($report_url);
 
-// convert the json reply to an array of variables
+// converte o json recebido em um array
 $api_reply_array = json_decode($api_reply, true);
 
 
@@ -50,12 +50,16 @@ if($api_reply_array['response_code']==-2){
 	echo $api_reply_array['verbose_msg'];
 }
 
-// reply is OK (it contains an antivirus report)
-// use the variables from $api_reply_array to process the antivirus data
-if($api_reply_array['response_code']==1){
-	echo "\nRecebemos um relatório dos antivírus, houveram ".$api_reply_array['positives']." positivos encontrados. aqui estão os dados: \n\n";
-	print_r($api_reply_array);
-	exit;
+
+if ($api_reply_array['response_code'] == 1) {
+    $resultado = "Recebemos um relatório dos antivírus, houveram <strong>" . $api_reply_array['positives'] . "</strong> positivos encontrados. Confira os <a href='detalhes.php'>detalhes técnicos</a>.";
+
+    
+/* 
+	$relatorio = $api_reply_array['scans']; */
+    setcookie('relatorio', serialize($api_reply_array['scans']), time() + 3600, "/"); 
+    header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+    exit();
 }
 
 
@@ -91,11 +95,16 @@ if($api_reply_array['response_code']=='0'){
 	
 	$api_reply_array = json_decode($api_reply, true);
 	
-	if($api_reply_array['response_code']==1){
+	/* if($api_reply_array['response_code']==1){
 		echo "\nfile queued OK, you can use this scan_id to check the scan progress:\n".$api_reply_array['scan_id'];
 		echo "\nor just keep checking using the file hash, but it will only report once it is completed (no 'PENDING/QUEUED' reply will be given).";
-	}
+	} */
 
+	
+
+	header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+exit();
 }
 
+	
 ?>

@@ -21,7 +21,12 @@
             <?php
             if (isset($_GET['resultado'])) {
                 // Exibe o resultado passado na URL
-                echo nl2br(htmlspecialchars($_GET['resultado'], ENT_QUOTES, 'UTF-8'));
+                echo nl2br($_GET['resultado'], ENT_QUOTES, );
+                if (isset($_COOKIE['relatorio'])) {
+                   echo "cookie setado";
+                } else {
+                    echo "cookie não setado";
+                }
             } else {
                 echo "Nenhum resultado disponível.";
             }
