@@ -11,8 +11,11 @@ echo $hash2;
 echo "<br>";
 
 if ($hash1 == $hash2){
-    echo "arquivos são iguais";
+    $resultado = "arquivos são iguais";
 }else{ 
-    echo "arquivos diferentes";
+    $resultado = "arquivos diferentes";
 };
+
+header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+exit();
 ?>

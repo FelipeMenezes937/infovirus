@@ -85,6 +85,10 @@ if (isset($responseData['matches'])) {
 $resultado = $vssl ."<br>". $vrul;
 echo $resultado;
 
+
+header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+exit();
+
 /* 
 urls fornecidas pela google para testar:
 http://testsafebrowsing.appspot.com/s/malware.html
