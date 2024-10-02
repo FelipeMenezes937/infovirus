@@ -22,8 +22,6 @@
         <p>Estamos entusiasmados com a oportunidade de aplicar nossos conhecimentos em um projeto tão relevante e esperamos que nossa ferramenta possa ser útil para a comunidade. <br>
        </p>
     </div>
-<<<<<<< Updated upstream
-=======
 </div>
 
 
@@ -96,7 +94,6 @@
 </html>
 
 
->>>>>>> Stashed changes
     <?php include 'vlibras.php'; ?>
     <?php include 'config.php'; ?>
     <?php include 'footer.php'; ?> 

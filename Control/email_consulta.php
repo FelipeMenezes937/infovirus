@@ -1,54 +1,21 @@
 <?php
-function check_blacklist($email) {
-    $api_key = '47c376d236c66659ea4eab2e3e1fcb48';
-    $domain = explode('@', $email)[1];
-    $url = "https://api.hetrixtools.com/v2/$api_key/blacklist-check/domain/$domain/";
+$api_key = "25196145ef5ede904dbd8a5d0a098a9640377acc";
+$email = $_GET['femail'];
+$url = "https://leakcheck.io/api/public?key=$api_key&check=$email";
 
-    $response = file_get_contents($url);
-    $data = json_decode($response, true);
+$response = file_get_contents($url);
 
-    if ($data['status'] == 'SUCCESS') {
-        if ($data['blacklisted_count'] > 0) {
-            echo "O domínio $domain está listado em " . $data['blacklisted_count'] . " blacklists.\n";
-            foreach ($data['blacklisted_on'] as $blacklist) {
-                echo "Listada em: " . $blacklist['rbl'] . "\n";
-            }
-        } else {
-            echo "O domínio $domain não está listado em nenhuma blacklist.\n";
-        }
-    } else {
-        echo "Erro ao verificar a blacklist.\n";
-    }
+if ($response === FALSE) {
+    die('Ocorreu um erro ao realizar a solicitação');
 }
 
-// Teste do código
-$email = $_GET['femail'];
-check_blacklist($email);
+$dados = json_decode($response, true);
 
-// o domínio "mailnator" é um exemplo de testes
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Exibe toda a resposta da API
+echo "<pre>";
+print_r($dados);
+echo "</pre>";
+$resultado = $dados;
+header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
+exit();
 ?>

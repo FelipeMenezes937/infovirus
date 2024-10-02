@@ -12,26 +12,12 @@
 
     <div class="container">
     <br> <br> <br> 
-<<<<<<< Updated upstream
         <h2> <b> Fascículos </b> </h2>  
-=======
-        
-    <h2> <b> Conscientização </b> </h2>
->>>>>>> Stashed changes
         <p> Designamos esta página com o objetivo de conscientizar sobre o uso correto de dispositivos, garantindo que as pessoas estejam protegidas contra qualquer tipo de ataque digital. </p>
     
         <p> Exibiremos abaixo alguns dos principais fascículos que mostram diversos tipos de segurança digital: </p>
 </div>
 
-<<<<<<< Updated upstream
-<div class="fasciculos">
-    <a href="codigosmaliciosos"> </a>
-    <a href="computadores"> </a>
-    <a href="privacidade"> </a>
-    <a href="redes"> </a>
-    <a href="vazamentos"> </a>
-</div>
-=======
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -71,29 +57,29 @@
 <center>   
 <div class="right-sobre">
         <div class="fotos"> 
-            <div class="foto-container">
+        <a href="codigosmaliciosos.php"><div class="foto-container">
                 <img class="foto" src="imagens/hacker.png" height="150" width="150">
                 <div class="legenda">Códigos maliciosos</div>
-            </div>
+            </div> </a>
 
-            <div class="foto-container">
+            <a href="computadores">  <div class="foto-container">
                 <img class="foto" src="imagens/computador.png" height="150" width="150">
                 <div class="legenda">Computadores</div>
-            </div>
+            </div></a>
 
-            <div class="foto-container">
+            <a href="privacidade"> <div class="foto-container">
                 <img class="foto" src="imagens/priv.png" height="150" width="150">
                 <div class="legenda">Privacidade</div>
-            </div>
+            </div></a>
           
-            <div class="foto-container">
+            <a href="redes"> <div class="foto-container">
                 <img class="foto" src="imagens/rede.png" height="150" width="150">
                 <div class="legenda">Redes</div>
-            </div>
+            </div></a>
 
-            <div class="foto-container">
+            <a href="vazamentos"> <div class="foto-container">
                 <img class="foto" src="imagens/vazamento.png" height="150" width="150">
-                <div class="legenda">Vazamentos</div>
+                <div class="legenda">Vazamentos</div></a>
             </center>
             </div>
         </div>
@@ -101,7 +87,6 @@
 </body>
 </html>
 
->>>>>>> Stashed changes
 
 
 <?php include 'vlibras.php'; ?>
@@ -111,19 +96,3 @@
 
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-    <a href="codigosmaliciosos"> </a>
-    <a href="computadores"> </a>
-    <a href="privacidade"> </a>
-    <a href="redes"> </a>
-    <a href="vazamentos"> </a>
-</div>
