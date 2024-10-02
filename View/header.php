@@ -29,8 +29,9 @@
                         <ul>
                             <li><a href="https://www.virustotal.com/gui/home/upload" target="_blank">Virus Total</a></li>
                             <li><a href="https://leakcheck.io/" target="_blank">Leak Checker</a></li>
-                            <li><a href="https://rapidapi.com/hub" target="_blank">Rapid API</a></li>
+                            <li><a href="https://rapidapi.com/hub" target="_blank">hetrixtools</a></li>
                             <li><a href="https://haveibeenpwned.com/" target="_blank">Have i been pwned</a></li>
+                            <li><a href="https://safebrowsing.google.com/" target="_blank">Safe Browsing</a></li>
                         </ul>
                     </div>
                 </li>
