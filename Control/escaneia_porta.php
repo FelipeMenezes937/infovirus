@@ -76,12 +76,11 @@ $portas_abertas = scan_portas($host, $portas, $tempo);
 
 // Construir o resultado
 $resultado = "";
-// Construir o resultado
-$resultado = "";
+
 if (!empty($portas_abertas)) {
     foreach ($portas_abertas as $porta => $info) {
         $resultado .= "
-        Porta $porta: {$info['software']} (Versão: {$info['versao']}) (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)\n";
+       <strong> Porta   $porta: </strong> {$info['software']} (Versão: {$info['versao']}) (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)\n";
     }
 } else {
 
