@@ -9,7 +9,7 @@
     <style>
     </style>
 </head >
-<body>
+<body background color>
     <?php include 'header.php'; ?>
 <div class="main-sobre">
  <div class="left-sobre">   
@@ -34,27 +34,23 @@
     <title>Exemplo de Legenda</title>
     <style>
         .foto {
-            border-radius: 50%;
-            object-fit: cover;
-            transition: transform 0.6s; /*delay pra foto aumentar*/
-            margin: 10px;
+            border-radius: 100%;
+            transition: transform 0.5s; /*delay pra foto aumentar*/
+       
             position: relative;
         }
         .foto:hover {
-            transform: scale(1.2); /*tamanho da foto*/ 
+            transform: scale(1.1); /*tamanho da foto*/ 
+        
         }
         .legenda {
             opacity: 0;
             transition: opacity 0.3s; /*velocidade da legenda */    
-            position: absolute;
             left: 50%;
-            transform: translateX(-50%);
+            
             font-weight: bold;
         }
-        .foto-container {
-            position: relative;
-            display: inline-block;
-        }
+      
         .foto-container:hover .legenda {
             opacity: 1;
         }
@@ -69,7 +65,7 @@
             </div>
 
             <div class="foto-container">
-                <img class="foto" src="imagens/kelvin.jpeg" alt="Foto 2" height="220" width="220">
+                <img class="foto" src="imagens/kelv.jpeg" alt="Foto 2" height="220" width="220">
                 <div class="legenda">Kelvin Ruiz </div>
             </div>
 

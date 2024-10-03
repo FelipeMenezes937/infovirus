@@ -115,7 +115,15 @@ body {
     align-items: center;
     width: 100%;
     margin-top: 70px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    gap: 10px;
+
 }
+
+
 
 .test-button {
     background-color: #0349ae;
@@ -128,7 +136,8 @@ body {
 }
 
 .test-button:hover {
-    background: #0349ae;
+    background: #03449e;
+   
 }
 
 /* Estilo para a navegação lateral */
@@ -193,4 +202,6 @@ body {
     color: white;
     border: none;
     border-radius: 3px;
+    transition: opacity 0.3s;
+    
 }

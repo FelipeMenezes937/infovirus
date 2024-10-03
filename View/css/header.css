@@ -104,7 +104,7 @@ header {
     padding: 10px 0; /* Espacemento interno vertical */
     border-radius: 8px; /* Bordas arredondadas */
     z-index: 1000; /* Certifica-se de que fique acima de outros elementos */
-    transition: opacity 0.3s ease; /* Animação suave para a visibilidade */
+    transition: opacity 1.0s ease; /* Animação suave para a visibilidade */
     opacity: 0; /* Começa invisível */
 }
 
@@ -122,6 +122,7 @@ header {
 /* Estilo dos itens do dropdown */
 .dropdown li {
     margin: 0; /* Remove margens nos itens */
+            
 }
 
 .dropdown li a {
@@ -142,3 +143,4 @@ header {
     outline: none; /* Remove contorno padrão */
     box-shadow: 0 0 0 2px rgba(3, 73, 174, 0.5); /* Sombra de foco leve */
 }
+

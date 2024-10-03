@@ -64,6 +64,3 @@
     transition: background-color 0.3s;
 }
 
-#config-popup button:hover {
-    background-color: #002d6b; /* Cor do botão ao passar o mouse */
-}

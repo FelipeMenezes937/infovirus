@@ -1,3 +1,4 @@
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
 <<<<<<< Updated upstream
-=======
+
 
 >>>>>>> Stashed changes
     <title>Login</title>
@@ -22,7 +23,6 @@
                 <h1>Login</h1> <br> <br>
                 <!-- Verificação da mensagem de erro -->
                 <?php
-                session_start();
                 if (isset($_SESSION['mensagem_erro'])) {
                     echo "<p style='color:red;'>" . $_SESSION['mensagem_erro'] . "</p>";
                     unset($_SESSION['mensagem_erro']); // Limpa a mensagem de erro após exibi-la
@@ -58,7 +58,7 @@
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5./dist/ionicons/ionicons.js"></script>
     <?php include 'vlibras.php'; ?>
     <?php include 'config.php'; ?>
     <?php include 'footer.php'; ?> 

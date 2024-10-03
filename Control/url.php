@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $furl = $_POST['furl'];
-$apiKey = 'AIzaSyAtoJrq4rufxtaYtkGs6jZWuii7p10EOAg'; // Substitua pela sua chave de API
+$apiKey = 'coloca a api key aqui paizao'; // Substitua pela sua chave de API
 $apiEndpoint = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $apiKey;
 $resultado;
 

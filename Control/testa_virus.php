@@ -1,5 +1,5 @@
 <?php
-require './vendor/autoload.php';
+require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 header("Content-Type: text/plain"); 
@@ -7,7 +7,6 @@ header("Content-Type: text/plain");
 $virustotal_api_key = "9c786184ee0b07f3f16436272314583f89cc76a011add8d9feeb75b0bc41600e";
 
 $file_to_scan =  $_FILES['arquivo']['tmp_name'];
-
 
 $file_size_mb = filesize($file_to_scan)/1024/1024;
 
@@ -33,9 +32,9 @@ if ($api_reply_array['response_code'] == 1) {
     exit();
 }
 
+// [PART 2] Um relatório para este arquivo não foi encontrado, enviar arquivo para verificação
 if($api_reply_array['response_code'] == 0){
 
-    // default url where to post files
     $post_url = 'https://www.virustotal.com/vtapi/v2/file/scan';
 
     // get a special URL for uploading files larger than 32MB (up to 200MB)

@@ -45,7 +45,6 @@ $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$se
 if ($conexao->query($sql) === TRUE) {
     $_SESSION['status_cadastro'] = true;
     header('Location: ../View/login.php');
-    $conexao->close();
     exit();
 } else {
     $_SESSION['mensagem_erro'] = "Erro ao cadastrar usuário.";
@@ -53,6 +52,5 @@ if ($conexao->query($sql) === TRUE) {
     $conexao->close();
     exit();
 }
-
 
 ?>

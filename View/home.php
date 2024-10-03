@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
-    <title>Seu Antivirus</title>
+    <title>infovirus</title>
 </head>
 <body>
     <?php require_once 'header.php'; ?>
