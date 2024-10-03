@@ -1,18 +1,18 @@
 <?php
-// Função para buscar dados da API
+require 'vendor/autoload.php';
+use GuzzleHttp\Client;
+
+// Função para buscar dados da API usando Guzzle
 function buscarDadosDaApi($caractereConsulta) {
+    $client = new Client();
     $url = 'https://api.pwnedpasswords.com/range/' . $caractereConsulta;
-    $ch = curl_init($url);
+    $response = $client->request('GET', $url);
     
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $resposta = curl_exec($ch);
-    
-    if (curl_errno($ch)) {
-        throw new RuntimeException('Erro ao buscar: ' . curl_error($ch));
+    if ($response->getStatusCode() !== 200) {
+        throw new RuntimeException('Erro ao buscar: ' . $response->getReasonPhrase());
     }
     
-    curl_close($ch);
-    return $resposta;
+    return $response->getBody()->getContents();
 }
 
 // Função para contar as ocorrências da senha
@@ -27,7 +27,6 @@ function contarOcorrenciasDeSenha($hashes, $hashParaVerificar) {
     return 0;
 }
 
-
 function verificarSenhaNaApi($senha) {
     $sha1Senha = strtoupper(sha1($senha, false));
     $primeiros5Caracteres = substr($sha1Senha, 0, 5);
@@ -41,7 +40,7 @@ function processarDados($senha) {
     $contagem = verificarSenhaNaApi(trim($senha));
     
     if ($contagem) {
-        return "A senha foi encontrada  $contagem vez(es)... você provavelmente deve trocá-la.";
+        return "A senha foi encontrada $contagem vez(es)... você provavelmente deve trocá-la.";
     } else {
         return "A senha não foi encontrada. Continue com segurança!";
     }
@@ -73,13 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-
-
-
 </body>
 </html>
 
-<<<<<<< Updated upstream
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -96,5 +91,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = "Método de solicitação inválido.";
 }
 ?>
-=======
->>>>>>> Stashed changes

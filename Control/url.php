@@ -1,6 +1,9 @@
 <?php
+require 'vendor/autoload.php';
+use GuzzleHttp\Client;
+
 $furl = $_POST['furl'];
-$apiKey = 'coloca a api key aqui paizao'; // Substitua pela sua chave de API
+$apiKey = 'AIzaSyAtoJrq4rufxtaYtkGs6jZWuii7p10EOAg'; // Substitua pela sua chave de API
 $apiEndpoint = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $apiKey;
 $resultado;
 
@@ -67,16 +70,13 @@ $requestBody = json_encode([
     ]
 ]);
 
-$ch = curl_init($apiEndpoint);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $requestBody);
+$client = new Client();
+$response = $client->request('POST', $apiEndpoint, [
+    'headers' => ['Content-Type' => 'application/json'],
+    'body' => $requestBody
+]);
 
-$response = curl_exec($ch);
-curl_close($ch);
-
-$responseData = json_decode($response, true);
+$responseData = json_decode($response->getBody(), true);
 if (isset($responseData['matches'])) {
     $vrul = " url: <strong>perigosa!</strong>";
 } else {
@@ -84,7 +84,6 @@ if (isset($responseData['matches'])) {
 }
 $resultado = $vssl ."<br>". $vrul;
 echo $resultado;
-
 
 header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
 exit();
