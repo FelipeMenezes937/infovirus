@@ -40,11 +40,9 @@ $dados = json_decode($resposta, true);
         // Formate e exiba a resposta
         echo "<h1>Resultado da Investigação</h1>";
         echo "<pre>";
-        print_r($dados); // Exibe a estrutura do array de forma legível
+        print_r($dados); 
         echo "</pre>";
 
-        // Se você quiser um formato mais específico, pode acessar elementos específicos
-        // Exemplo:
         // echo "<p><strong>Status:</strong> " . htmlspecialchars($dados['status']) . "</p>";
         // echo "<p><strong>Detalhes:</strong> " . htmlspecialchars($dados['details']) . "</p>";
     } else {

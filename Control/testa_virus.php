@@ -32,12 +32,11 @@ if ($api_reply_array['response_code'] == 1) {
     exit();
 }
 
-// [PART 2] Um relatório para este arquivo não foi encontrado, enviar arquivo para verificação
+// [PART 2] se o arquivo n for encontrado a gnt manda o arquivo para relatório
 if($api_reply_array['response_code'] == 0){
 
     $post_url = 'https://www.virustotal.com/vtapi/v2/file/scan';
 
-    // get a special URL for uploading files larger than 32MB (up to 200MB)
     if($file_size_mb >= 32){
         $response = $client->request('GET', 'https://www.virustotal.com/vtapi/v2/file/scan/upload_url?apikey='.$virustotal_api_key);
         $api_reply = $response->getBody()->getContents();

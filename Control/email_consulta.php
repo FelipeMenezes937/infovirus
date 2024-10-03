@@ -11,7 +11,6 @@ if ($response === FALSE) {
 
 $dados = json_decode($response, true);
 
-// Exibe toda a resposta da API
 echo "<pre>";
 print_r($dados);
 echo "</pre>";

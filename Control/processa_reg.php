@@ -2,21 +2,18 @@
 session_start();
 include "../Model/conexaobd.php";
 
-// Verificando se todos os campos obrigatórios foram preenchidos
 if (empty($_POST['fname']) || empty($_POST['femail']) || empty($_POST['fsenha']) || empty($_POST['fconfirma_senha'])) {
     $_SESSION['mensagem_erro'] = "Por favor, preencha todos os campos.";
     header("Location: ../View/register.php");
     exit();
 }
 
-// Verificando se as senhas coincidem
 if ($_POST['fsenha'] != $_POST['fconfirma_senha']) {
     $_SESSION['mensagem_erro'] = "As senhas não coincidem.";
     header("Location: ../View/register.php");
     exit();
 }
 
-// Verificando se a checkbox de termos foi marcada
 if (!isset($_POST['termos'])) {
     $_SESSION['mensagem_erro'] = "Você deve aceitar os termos e condições.";
     header("Location: ../View/register.php");
@@ -39,7 +36,6 @@ if ($row['total'] == 1) {
     exit();
 }
 
-// Inserindo o novo usuário no banco de dados
 $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
 if ($conexao->query($sql) === TRUE) {

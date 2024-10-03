@@ -15,7 +15,6 @@ function buscarDadosDaApi($caractereConsulta) {
     return $response->getBody()->getContents();
 }
 
-// Função para contar as ocorrências da senha
 function contarOcorrenciasDeSenha($hashes, $hashParaVerificar) {
     $linhas = explode("\n", trim($hashes));
     foreach ($linhas as $linha) {
