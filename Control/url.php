@@ -7,7 +7,7 @@ $apiKey = '';
 $apiEndpoint = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $apiKey;
 $resultado;
 
-if(isset($api_key) && $api_key[1] === "A"){
+if(isset($api_key) && $api_key[1] === "A" && isset($furl)){
 function getMainDomain($url) {
     $url = preg_replace('/^https?:\/\//', '', $url);
     $url = explode('/', $url)[0];
@@ -94,7 +94,7 @@ urls fornecidas pela google para testar:
 http://testsafebrowsing.appspot.com/s/malware.html
 */
 }else{
-    $resultado = "coloca a api key paizao"; 
+    $resultado = "api key faltando"; 
     header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
 exit();
 }

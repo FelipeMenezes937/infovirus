@@ -41,7 +41,7 @@ function processarDados($senha) {
     if ($contagem) {
         return "A senha foi encontrada $contagem vez(es)... você provavelmente deve trocá-la.";
     } else {
-        return "A senha não foi encontrada. Continue com segurança!";
+        return "<strong>A senha não foi encontrada</strong>. Continue com segurança!";
     }
 }
 ?>
