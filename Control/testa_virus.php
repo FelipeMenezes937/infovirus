@@ -22,10 +22,13 @@ $api_reply_array = json_decode($api_reply, true);
 if($api_reply_array['response_code'] == -2){
     $resultado = $api_reply_array['verbose_msg'];
 }
-
+$positivos = $api_reply_array['positives'];
 if ($api_reply_array['response_code'] == 1) {
-    $resultado = "Recebemos um relatório dos antivírus, houveram <strong>" . $api_reply_array['positives'] . "</strong> positivos encontrados. Confira os <a href='detalhes.php'>detalhes técnicos</a>.";
-    
+    if($positivos == 0){
+        $resultado = "o arquivo não consta em nenhum banco, <strong> é seguro </strong>";
+    }else{
+    $resultado = "Recebemos um relatório dos antivírus, houveram <strong>" . $api_reply_array['positives'] . "</strong> positivos encontrados. Confira os <a href='detalhes.php'>detalhes técnicos</a>. <br/> o arquivo é <strong> perigoso </strong>";
+    }
     setcookie('relatorio', serialize($api_reply_array['scans']), time() + 3600, "/"); 
     header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
     exit();
