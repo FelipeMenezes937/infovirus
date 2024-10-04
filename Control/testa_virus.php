@@ -67,4 +67,4 @@ if($api_reply_array['response_code'] == 0){
     header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
     exit();
 }
-?>
+

@@ -91,5 +91,3 @@ if (!empty($portas_abertas)) {
 // Redireciona para a página de resultados
 header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
 exit();
-
-?>
