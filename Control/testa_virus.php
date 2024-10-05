@@ -35,10 +35,10 @@ file_put_contents('relatorio.json', $json_data);
 if($api_reply_array['response_code'] == -2){
     $resultado = $api_reply_array['verbose_msg'];
 }
-$positivos = $api_reply_array['positives'];
+
 
 if ($api_reply_array['response_code'] == 1) {
-    if($positivos == 0){
+    if($api_reply_array['positives'] == 0){
         $resultado = "o arquivo não consta em nenhum banco, <strong> é seguro </strong>";
 
     }else{
