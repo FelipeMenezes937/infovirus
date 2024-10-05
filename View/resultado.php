@@ -1,9 +1,4 @@
-<?php
-if(isset($_COOKIE['relatorio'])){
-    echo 'cookie setado';
-}else{
-    echo 'cookie não setado';
-}?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
