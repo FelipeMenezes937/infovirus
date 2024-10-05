@@ -1,3 +1,9 @@
+<?php
+if(isset($_COOKIE['relatorio'])){
+    echo 'cookie setado';
+}else{
+    echo 'cookie não setado';
+}?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,6 +28,7 @@
             if (isset($_GET['resultado'])) {
                 // Exibe o resultado passado na URL
                 echo nl2br($_GET['resultado'], ENT_QUOTES, );
+
             }
             ?>
         </div>
