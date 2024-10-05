@@ -22,7 +22,7 @@
             <?php
             if (isset($_GET['resultado'])) {
                 // Exibe o resultado passado na URL
-                echo nl2br($_GET['resultado'], ENT_QUOTES, );
+                echo "".nl2br($_GET['resultado'], ENT_QUOTES, );
 
             }
             ?>
