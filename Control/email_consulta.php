@@ -8,7 +8,7 @@ $response = file_get_contents($url);
 $dados = json_decode($response, true);
 
 if(!($dados['success'])){
-    $resultado = "consultas excedidas :(";
+    $resultado = "consultas excedidas :(, temos que pagar a api";
 }else{
 $json_data = json_encode($dados);
 
@@ -28,6 +28,8 @@ header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
 exit();
 /* api_key1 = "25196145ef5ede904dbd8a5d0a098a9640377acc";
 api_key2 = "a01be194701967f1e8681056244a144ba6f1ecb8"; */
+
+//use como exemplo "exemple@gmail.com"
 
 
 
