@@ -5,12 +5,8 @@ $url = "https://leakcheck.io/api/public?key=$api_key&check=$email";
 
 $response = file_get_contents($url);
 
-if ($response === FALSE) {
-    die('Ocorreu um erro ao realizar a solicitação');
-}
-
-
 $dados = json_decode($response, true);
+
 if(!($dados['success'])){
     $resultado = "consultas excedidas :(";
 }else{
