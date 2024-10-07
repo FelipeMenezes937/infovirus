@@ -3,11 +3,11 @@ require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $furl = $_POST['furl'];
-$apiKey = '';
+$apiKey = "";
 $apiEndpoint = 'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=' . $apiKey;
 $resultado;
 
-if(isset($api_key) && $api_key[1] === "A" && isset($furl)){
+if(isset($apiKey) && $apiKey[0] == "A" && isset($furl)){
 function getMainDomain($url) {
     $url = preg_replace('/^https?:\/\//', '', $url);
     $url = explode('/', $url)[0];

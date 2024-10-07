@@ -30,13 +30,19 @@ echo '<th>Versão</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
+
+
 foreach ($scans as $scanName => $scanDetails) {
-    if($scanDetails['detected'] == 1){
-        $scanDetails['detected'] = 'detectado';
-    }else{
+    if ($scanDetails['detected'] == 1) {
+        $scanDetails['detected'] = "detectado";
+    } else {
         $scanDetails['detected'] = 'não detectado';
     }
 
+
+    if($scanDetails['result'] == ""){
+        $scanDetails['result'] = "não encontrado";
+    }
 
     echo '<tr>';
     echo '<td>' . htmlspecialchars($scanName) . '</td>';
