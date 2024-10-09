@@ -77,7 +77,7 @@ $resultado = "";
 if (!empty($portas_abertas)) {
     foreach ($portas_abertas as $porta => $info) {
         $resultado .= "
-       <strong> Porta   $porta: </strong> {$info['software']} (Versão: {$info['versao']}) (Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)\n";
+       <strong> Porta   $porta: </strong> {$info['software']} (Versão: {$info['versao']}) \n";
     }
 } else {
 
@@ -88,3 +88,4 @@ if (!empty($portas_abertas)) {
 // Redireciona para a página de resultados
 header("Location: ../view/resultado.php?resultado=" . urlencode($resultado));
 exit();
+//(Tempo de resposta: " . round($info['tempo_resposta'], 4) . " segundos)

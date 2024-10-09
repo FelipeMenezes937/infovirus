@@ -48,6 +48,7 @@ body {
 
 .input-box {
     margin-bottom: 0px;
+
 }
 
 
@@ -60,11 +61,11 @@ body {
 
 .upload-box, .comparator-box {
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -85,10 +86,10 @@ body {
 
 .upload-btn input[type="file"] {
     position: absolute;
-    top: 0;
+    top: 5;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     opacity: 0;
     cursor: pointer;
 }
@@ -129,10 +130,12 @@ body {
     background-color: #0349ae;
     color: white;
     border: none;
-    padding: 15px 38px;
+    padding: 15px 40px;
     font-size: 20px;
     border-radius: 5px;
     cursor: pointer;
+    
+    
 }
 
 .test-button:hover {
