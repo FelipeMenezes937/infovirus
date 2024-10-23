@@ -19,8 +19,13 @@
            
                 <div class="subtitle">Proteja seus dados com nossa segurança digital de ponta!</div>
             </div>
-            <h2>Ola, <?php echo $_SESSION['nome'];?></h2>
+            <?php 
+           if(isset($_SESSION['nome'])){
+            $boas_vindas = "<h2>Olá, " . $_SESSION['nome'] . "</h2>";
+            echo $boas_vindas;
+        }?>
 
+            
             
             <div class="content-area">
                 <?php
