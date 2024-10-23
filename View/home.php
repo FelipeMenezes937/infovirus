@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,10 @@
             <div class="text-test"> 
             <br> <br>    
             <div class="title"> SEGURANÇA ONLINE <br> </div>
+           
                 <div class="subtitle">Proteja seus dados com nossa segurança digital de ponta!</div>
             </div>
+            <h2>Ola, <?php echo $_SESSION['nome'];?></h2>
 
             
             <div class="content-area">

@@ -17,6 +17,7 @@
     <div class="main-login">
         <div class="left-login"> 
             <a href="home.php"> <img id="logo-image" src="imagens/logo-Bsf.png" alt="logo_login" > </a>
+           
         </div>
         <div class="right-login"> 
             <div class="card-login"> 
