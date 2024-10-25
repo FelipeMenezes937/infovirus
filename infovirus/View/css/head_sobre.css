@@ -1,0 +1,81 @@
+@import url("size.css");
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.fotos img{
+ margin: 30px;
+}
+
+.main-sobre {
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+       
+    }
+    
+.left-sobre {
+        width: 45vw;
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9; /* Define o fundo azul da esquerda */
+    }
+    
+.right-sobre {
+        width: 55vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9; /* Mantém o fundo branco da direita */
+    }
+    
+    .foto {
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.6s; /*delay pra foto aumentar*/
+        margin: 10px;
+        position: relative;
+    }
+    .foto:hover {
+        transform: scale(1.2); /*tamanho da foto*/ 
+    }
+    .legenda {
+        opacity: 0;
+        transition: opacity 0.5s; /*velocidade da legenda */    
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+    }
+    .foto-container {
+        position: relative;
+        display: inline-block;
+    }
+    .foto-container:hover .legenda {
+        opacity: 1;
+    }
+        
+
+    
+.container {
+    font-size: 20px;
+    margin: 80px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+    
+}
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container p {
+    line-height: 1.6;
+    text-align: justify;
+}
+

@@ -1,0 +1,141 @@
+
+body.dark-mode {
+    background-color: #1a1a1a; /* cor de fundo do modo escuro */
+    color: #fff; /* cor do texto no modo escuro */
+}
+
+body.dark-mode .main-login {
+    background-color: #1a1a1a; /* cor de fundo da área de login no modo escuro */
+}
+
+body.dark-mode .left-login, 
+body.dark-mode .right-login {
+    background-color: #1a1a1a; /* fundo dos lados esquerdo e direito no modo escuro */
+}
+
+body.dark-mode .left-login > h1,
+body.dark-mode .card-login > h1 {
+    color: #fff; /* cor do cabeçalho no modo escuro */
+}
+
+body.dark-mode .social-login ion-icon {
+    color: #fff; /* cor dos ícones de login social no modo escuro */
+}
+
+body.dark-mode .inputbox label {
+    color: #b0a7a1; /* cor do rótulo de entrada no modo escuro */
+}
+
+body.dark-mode .inputbox input {
+    color: #fff; /* cor do texto das inputs no modo escuro */
+}
+
+body.dark-mode .btn-login {
+    background-color: #0349ae; /* manter o botão com a mesma cor no modo escuro */
+    color: #fff; /* cor do texto no botão de login */
+}
+
+body.dark-mode .inputbox ion-icon {
+    color: #b0a7a1; /* ícone nas caixas de entrada no modo escuro */
+}
+
+/* Links de criar nova conta */
+body.dark-mode .register p a {
+    color: #FFF; /* cor padrão do link no modo escuro */
+    text-decoration: none;
+    font-size: 1em;
+}
+
+body.dark-mode .register p a:hover {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+body.dark-mode .register p a:visited {
+    color: #FFF;
+}
+
+/* Dark mode para o header */
+body.dark-mode header {
+    background-color: #33342F; /* Cor de fundo do header no modo escuro */
+}
+
+body.dark-mode .nav-bar li a {
+    color: #fff; /* Cor dos links no header no modo escuro */
+}
+
+body.dark-mode .logo-text h1 {
+    color: #fff; /* Cor do texto do logo no modo escuro */
+}
+
+body.dark-mode .dropdown {
+    background-color: #33342F; /* Cor de fundo do dropdown no modo escuro */
+}
+
+body.dark-mode .dropdown li a {
+    color: #fff; /* Cor dos links dentro do dropdown no modo escuro */
+}
+
+body.dark-mode .btn-entrar,
+body.dark-mode .btn-cadastrar {
+    background-color: #0349ae; /* Mantendo a cor dos botões no modo escuro */
+    color: #fff; /* Cor do texto nos botões */
+}
+
+body.dark-mode #config-popup {
+    background-color: #33342F;
+    color: white;
+}
+
+body.dark-mode #config-popup button {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-mode #config-popup button:hover {
+    background-color: #777;
+}
+
+body.dark-mode .title {
+    color: #ffffff; /* cor de fundo da área de login no modo escuro */
+}
+body.dark-mode .subtitle {
+    color: #ffffff; /* cor de fundo da área de login no modo escuro */
+}
+
+body.dark-mode .input-box ion-icon {
+    color: #ffffff; /* ícone nas caixas de entrada no modo escuro */
+}
+
+body.dark-mode .option-button.active {
+    font-weight: bold;
+    color: rgb(255, 255, 255); /* Cor preta para o ativo */
+}
+
+body.dark-mode .option-button:hover {
+    color: rgb(255, 255, 255); /* Cor preta no hover */
+}
+
+body.dark-mode .result-box {
+    background-color: #33342F;
+    border: 2px solid #777;
+
+}
+
+body.dark-mode .comparator-box {
+    background-color: #33342F;
+    border: 2px solid #777;
+}
+
+body.dark-mode .upload-box {
+    background-color: #33342F;
+    border: 2px solid #777;
+}
+
+body.dark-mode .upload-icon ion-icon{
+    color: #ffffff;
+}
+
+body.dark-mode .register p a:hover {
+    color: #ffffff;
+}
