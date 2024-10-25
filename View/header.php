@@ -71,6 +71,8 @@
     </style>
 </head>
 <body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <header>
         <div class="logo">
             <a href="home.php"> 
@@ -125,8 +127,9 @@
             </a>
             <?php 
            }else{
-            $boas_vindas = "<h2>Olá, " . $_SESSION['nome'] . "</h2>";
-            echo $boas_vindas;
+            $user = "<a href='user.php'><ion-icon name='person-circle-sharp' class='user-icon'></ion-icon></a>";
+            /* $boas_vindas = "<h2>Olá, " . $_SESSION['nome'] . "</h2>"; */
+            echo $user;
         }?>
         </div>
     </header>

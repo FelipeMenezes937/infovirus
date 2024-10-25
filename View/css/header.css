@@ -144,3 +144,7 @@ header {
     box-shadow: 0 0 0 2px rgba(3, 73, 174, 0.5); /* Sombra de foco leve */
 }
 
+.user-icon{
+    width: 75px;
+    height: 70px;
+}

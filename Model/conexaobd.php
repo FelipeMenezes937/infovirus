@@ -2,7 +2,7 @@
 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = "felipe123";
 $bd = "infoVirus";
 
 // Função de conexão com mysqli
