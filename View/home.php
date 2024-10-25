@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,7 @@
            
                 <div class="subtitle">Proteja seus dados com nossa segurança digital de ponta!</div>
             </div>
-            <?php 
-           if(isset($_SESSION['nome'])){
-            $boas_vindas = "<h2>Olá, " . $_SESSION['nome'] . "</h2>";
-            echo $boas_vindas;
-        }?>
+            
 
             
             

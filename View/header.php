@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,6 +104,8 @@
             </ul>
         </nav>
 
+
+        <?php if(!isset($_SESSION['nome'])){?>
         <div class="buttons">
             <a href="login.php"> 
                 <button class="btn-entrar" 
@@ -120,7 +123,13 @@
                     Cadastrar
                 </button> 
             </a>
+            <?php 
+           }else{
+            $boas_vindas = "<h2>Olá, " . $_SESSION['nome'] . "</h2>";
+            echo $boas_vindas;
+        }?>
         </div>
     </header>
+
 </body>
 </html>
