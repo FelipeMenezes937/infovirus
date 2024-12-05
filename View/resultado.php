@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +8,7 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
-    <div class="container">
+    <div class="container-result">
         <div class="alert-icon">
             <ion-icon name="warning-outline"></ion-icon>
         </div>
@@ -22,13 +21,18 @@
             <?php
             if (isset($_GET['resultado'])) {
                 // Exibe o resultado passado na URL
-                echo "".nl2br($_GET['resultado'], ENT_QUOTES, );
-
+                echo "".nl2br($_GET['resultado'], ENT_QUOTES);
             }
             ?>
         </div>
-    </div>
 
+        <!-- Botão de voltar para a home -->
+        <div class="button-container">
+            <a href="home.php">
+                <button class="back-button">Nova análise</button>
+            </a>
+        </div>
+    </div>
 
     <?php include 'vlibras.php'; ?>
     <?php include 'config.php'; ?>

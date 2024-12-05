@@ -1,11 +1,147 @@
 body { 
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
+}
+
+.main-user {
+    width: 80%; 
+    margin: 0 auto; /* Centraliza a div horizontalmente */
+    height: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+
+.left-user {
+    width: 45%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 10px;
+    gap: 10px;
+    
+}
+
+.card-user {
+    height: 40%; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    gap: 20px; /* Ajusta o espaçamento entre os itens */
+    padding: 20px; /* Espaçamento interno para maior conforto visual */
+    margin-bottom: 60px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    gap: 20px; /* Ajusta o espaçamento entre ícone e texto */
+}
+
+.user-info ion-icon {
+    color: #33342F;
+    font-size: 8em; /* Ajusta o tamanho do ícone */
+}
+
+.user-info h1 {
+    font-size: 2.8em;
+    color: #212529;
+    margin: 0;
+}
+
+.user-info p {
+    font-size: 2em;
+    color: #6c757d;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start; /* Botões alinhados à esquerda */
+    gap: 40px; /* Ajusta o espaçamento entre os botões */
+    margin-top: 30px; /* Adiciona espaço entre texto e botões */
+}
+
+.buttons .btn {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: #0349ae;
+    border: none;
+    color: #FFF;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.buttons .btn:hover {
+    background-color: #0056b3; /* Azul escuro no hover */
+}
+
+.card-pesq {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    padding: 20px; /* Espaçamento interno */
+    color: #000;
+    gap: 15px;
+}
+
+.card-pesq h2 {
+    color: #000; /* Cor preta */
+    font-size: 2.2em;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 15px;
+}
+
+.card-pesq .stats {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;
+    color: #212529; /* Cor do texto das estatísticas */
+    text-align: left; /* Alinha as estatísticas à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+}
+
+.right-user {
+    width: 55%;
+    height: 100%;
+    background-color: #f9f9f9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px;
+}
+
+.right-user h1 {
+    color: #000; /* Cor preta */
+    font-size: 2.6em;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 15px;
+}
+
+.right-user ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.right-user li {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    margin: 10px 0;
+    border-radius: 5px;
 }

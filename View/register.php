@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +8,11 @@ session_start();
     <link rel="stylesheet" href="css/register.css">
     <title>Registrar</title>
 </head>
+    <div class="start">
+        <?php
+             require_once 'session_start.php'; 
+        ?>
+    </div>
 <body>
 <?php include 'header.php'; ?>
     <div class="main-login">

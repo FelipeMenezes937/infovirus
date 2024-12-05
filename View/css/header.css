@@ -33,12 +33,17 @@ header {
     font-family: Arial, sans-serif;
     font-size: 2.5em;
     margin-left: 10px;
+    font-weight: bold; /* Garantir que o texto esteja em negrito */
 }
+
 
 .nav-bar {
     display: flex;
-    position: relative; /* Necessário para o dropdown */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Ou `center`, dependendo do seu layout */
+    position: relative;
 }
+
 
 .nav-bar ul {
     display: flex;
@@ -122,7 +127,10 @@ header {
 /* Estilo dos itens do dropdown */
 .dropdown li {
     margin: 0; /* Remove margens nos itens */
-            
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+
 }
 
 .dropdown li a {
@@ -144,7 +152,75 @@ header {
     box-shadow: 0 0 0 2px rgba(3, 73, 174, 0.5); /* Sombra de foco leve */
 }
 
-.user-icon{
+.user-icon {
+    color: #02569b; /* Define a cor inicial */
     width: 75px;
     height: 70px;
+    transition: none; /* Remove transições indesejadas */
+}
+
+.user-icon:hover,
+.user-icon:focus,
+.user-icon:active {
+    color: #02569b; /* Mantém a mesma cor em todas as interações */
+}
+
+
+.nav-bar ul li {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: black; /* Cor inicial do texto */
+    padding: 10px;
+}
+
+.nav-bar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 99%;
+    height: 2px; /* Altura da linha */
+    background: black; /* Cor da linha */
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.nav-bar ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-bar .dropdown {
+    display: none; /* Esconde o submenu inicialmente */
+    width: 600px;
+    position: absolute;
+    background: white; /* Fundo do submenu */
+    border: 1px solid #ccc; /* Borda do submenu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    z-index: 1000; /* Certifique-se de que está acima de outros elementos */
+    margin-top: 5px;
+}
+
+    .nav-bar ul li:hover .dropdown {
+        display: block; /* Mostra o submenu ao passar o mouse */
+}
+
+.dropdown ul {
+    list-style: none; /* Remove os marcadores */
+    padding: 0; /* Remove o padding */
+    margin: 0; /* Remove a margem */
+}
+
+.dropdown ul li a {
+   
+    padding: 10px; /* Espaçamento interno */
+    color: black; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.dropdown ul li a:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
 }

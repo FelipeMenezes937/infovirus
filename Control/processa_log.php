@@ -14,13 +14,19 @@ $email = mysqli_real_escape_string($conexao, $_POST['email']);
 $senha = mysqli_real_escape_string($conexao, md5($_POST['senha'])); // Criptografar a senha com md5
 
 // Consulta para verificar se o usuário existe e se a senha está correta
-$query = "SELECT nome FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
+$query = "SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
 $result = mysqli_query($conexao, $query);
+
+// Verificar se a consulta foi bem-sucedida
+if (!$result) {
+    die('Erro na consulta: ' . mysqli_error($conexao)); // Exibe erro detalhado
+}
+
 $row = mysqli_num_rows($result);
 
 if ($row == 1) {
     $usuario = mysqli_fetch_assoc($result); 
-    $_SESSION['nome'] = $usuario['nome']; // Armazenando o nome na sessão
+    $_SESSION['email'] = $usuario['email']; // Armazenando o nome na sessão
     header('Location: ../View/home.php'); // Redirecionando para uma página pós-login
     exit();
 } else {

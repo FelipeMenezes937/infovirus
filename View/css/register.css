@@ -136,3 +136,6 @@ input:valid ~ label {
 .register p a:visited {
     color: #0349ae;
 }
+.start{
+    color: white;
+}

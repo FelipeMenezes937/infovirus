@@ -8,6 +8,7 @@
 </div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    consulta não gravada no banco de dados
     <div class="button-container">
 <button type="submit"class="test-button">Testar</button></div>
 </form>

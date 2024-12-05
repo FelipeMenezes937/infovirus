@@ -139,3 +139,14 @@ body.dark-mode .upload-icon ion-icon{
 body.dark-mode .register p a:hover {
     color: #ffffff;
 }
+
+body.dark-mode .terms-container,
+body.dark-mode .container {
+    background-color: #33342F;
+    border: 2px solid #777;
+}
+
+body.dark-mode .right-sobre,
+body.dark-mode .left-sobre {
+    background-color: #1a1a1a;
+}

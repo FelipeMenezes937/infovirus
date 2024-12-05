@@ -14,8 +14,8 @@ body {
     font-size: 35px;
     color: black;
     font-family: Arial Black,Arial Bold;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
     font-weight: bold;
     line-height: 1;
 }
@@ -44,4 +44,42 @@ body {
 
 .source-table tr:hover {
     background-color: #f1f1f1;
+}
+.buttons-top {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões */
+    margin-bottom: 30px;
+}
+
+.btn-oqfazer {
+    background-color: #0349ae;
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 8px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.btn-oqfazer:hover {
+    background-color: #02378e;
+    transform: scale(1.05); /* Efeito de zoom */
+}
+
+.btn-voltar {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #999;
+    transform: scale(1.05); /* Efeito de zoom */
 }

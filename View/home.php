@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +70,15 @@
     
 </nav>
 
-    
+<script>
+const $loadingBtn = document.querySelector(".button-container");
+
+$loadingBtn.addEventListener("click", (event) => {
+  document.body.classList.add("loading");
+});
+
+</script>
+
 <?php include 'vlibras.php'; ?>
 <?php include 'config.php'; ?>
 <?php require_once 'footer.php'; ?> 

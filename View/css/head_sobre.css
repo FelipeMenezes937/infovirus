@@ -67,6 +67,7 @@ body {
     margin: 80px;
     padding: 25px;
     background-color: white;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     
 }

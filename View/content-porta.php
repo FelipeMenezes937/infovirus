@@ -7,10 +7,19 @@
 </center>
     </div>
     <div class="button-container">
-    <button type="submit" class="test-button">Escanear Portas</button> 
+    <button type="submit" class="test-button">
+    Escanear Portas
+    </button> 
+    
 </div>
+<center>
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</center>
+
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</form>

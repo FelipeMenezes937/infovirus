@@ -53,3 +53,20 @@ body {
 .ndetec{
     color: blue;
 }
+
+.nfound{
+    color: rgb(60, 60, 60);
+}
+
+.btn-oqfazer {
+    background-color: #0349ae;
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 8px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    width: 10%;
+    height: 20%;
+}

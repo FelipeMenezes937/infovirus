@@ -9,7 +9,7 @@
     <style>
     </style>
 </head >
-<body background color>
+<body>
     <?php include 'header.php'; ?>
 <div class="main-sobre">
  <div class="left-sobre">   
@@ -35,9 +35,11 @@
     <style>
         .foto {
             border-radius: 100%;
-            transition: transform 0.5s; /*delay pra foto aumentar*/
-       
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
         }
         .foto:hover {
             transform: scale(1.1); /*tamanho da foto*/ 
@@ -70,7 +72,7 @@
             </div>
 
             <div class="foto-container">
-                <img class="foto" src="imagens/pinto.jpeg" alt="Foto 3" height="220" width="220">
+                <img class="foto" src="imagens/pinho.jpeg" alt="Foto 3" height="220" width="220">
                 <div class="legenda">Davi Pinho</div>
             </div>
             <center>
